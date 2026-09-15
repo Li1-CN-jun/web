@@ -1,0 +1,121 @@
+/* 基础重置，确保不同浏览器下的尺寸表现一致 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 页面背景与整体居中布局 */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: #263238;
+    background: #eef3f1;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* 名片卡片：12px 圆角、柔和阴影、入场动画与平滑悬停过渡 */
+.business-card {
+    width: min(100%, 360px);
+    padding: 40px 32px 36px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(38, 50, 56, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* 页面加载时轻微上移并淡入，营造柔和入场感 */
+    animation: fade-in-up 0.6s ease both;
+}
+
+/* 定义入场动画：从下方 16px、完全透明淡入到原位 */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 鼠标悬停时让卡片轻微上浮 */
+.business-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(38, 50, 56, 0.16);
+}
+
+/* 头像保持正方形并裁切为圆形 */
+.avatar {
+    width: 112px;
+    height: 112px;
+    display: block;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    border: 4px solid #e5efeb;
+    border-radius: 50%;
+}
+
+/* 姓名与职位信息 */
+h1 {
+    margin-bottom: 8px;
+    color: #1f2d2a;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.job-title {
+    color: #6b7d78;
+    font-size: 15px;
+    letter-spacing: 0;
+}
+
+/* 联系方式垂直排列，并使用 address 保持语义清晰 */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.contact-info a {
+    /* 让图标与文字在水平方向对齐 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #4f7770;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* 联系方式中的内联 SVG 图标：统一尺寸并跟随文字颜色 */
+.contact-info svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.contact-info a:hover,
+.contact-info a:focus-visible {
+    color: #244f48;
+    text-decoration: underline;
+}
+
+/* 小屏幕上收紧内边距，避免卡片占用过多空间 */
+@media (max-width: 400px) {
+    .business-card {
+        padding: 32px 24px;
+    }
+}

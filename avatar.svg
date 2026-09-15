@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="林然的头像">
+  <!-- 定义柔和渐变，作为头像底色（淡青到深青，契合简约风格） -->
+  <defs>
+    <linearGradient id="avatarGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5c8a81"/>
+      <stop offset="100%" stop-color="#2d4f47"/>
+    </linearGradient>
+  </defs>
+  <!-- 正方形底图，最终由 CSS 裁切为圆形 -->
+  <rect width="240" height="240" fill="url(#avatarGrad)"/>
+  <!-- 居中展示姓氏首字 -->
+  <text
+    x="120" y="152"
+    font-family="'Microsoft YaHei','PingFang SC',sans-serif"
+    font-size="96" font-weight="600"
+    fill="#ffffff" text-anchor="middle"
+  >林</text>
+</svg>

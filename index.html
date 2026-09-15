@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人名片</title>
+    <!-- 引入独立的 CSS 样式文件，保持结构与表现分离 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 页面主内容：个人名片卡片 -->
+    <main class="business-card">
+        <!-- 使用图片元素展示圆形头像（本地 SVG，保证离线可用） -->
+        <img
+            class="avatar"
+            src="avatar.svg"
+            alt="林然的头像"
+        >
+
+        <!-- 个人基本信息 -->
+        <h1>林然</h1>
+        <p class="job-title">产品设计师</p>
+
+        <!-- 联系方式列表 -->
+        <address class="contact-info">
+            <a href="mailto:linran@example.com">
+                <!-- 邮箱图标（内联 SVG，随文字配色） -->
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+                linran@example.com
+            </a>
+            <a href="tel:+8613800138000">
+                <!-- 电话图标（内联 SVG） -->
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l1.5 5L9 9.5a12 12 0 0 0 5.5 5.5L16 13l5 1.5v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+                +86 138 0013 8000
+            </a>
+            <a href="https://www.linran.design" target="_blank" rel="noopener noreferrer">
+                <!-- 网站图标（内联 SVG） -->
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+                www.linran.design
+            </a>
+        </address>
+    </main>
+</body>
+</html>
